@@ -1,0 +1,32 @@
+﻿@page "/"
+@inject HttpClient HttpClient
+
+<form>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input class="form-control" id="username" @bind-value="@Username">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" @bind-value="@Password">
+    </div>
+    <button type="button" class="btn btn-primary" @onclick="Login">Login</button>
+</form>
+
+<div class="container">
+    <h5 class="text-center">Token: @Authtoken</h5>
+</div>
+@code
+{
+    string Username { get; set; }
+    string Password { get; set; }
+
+    string Authtoken { get; set; }
+
+    private async Task Login()
+    {
+
+
+        Authtoken = "?";
+    }
+}
